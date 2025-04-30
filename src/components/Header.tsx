@@ -48,9 +48,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="font-montserrat font-bold text-xl md:text-2xl">
-            <span className="text-secondary">HC</span> SPORTS
-          </h1>
+          <img 
+            src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" 
+            alt="HC SPORTS" 
+            className="h-10 md:h-12"
+          />
         </div>
         
         {/* Desktop Navigation */}

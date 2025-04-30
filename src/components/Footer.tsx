@@ -12,9 +12,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="font-montserrat font-bold text-xl mb-4">
-              <span className="text-secondary">HC</span> SPORTS
-            </h3>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" 
+                alt="HC SPORTS" 
+                className="h-12"
+              />
+            </div>
             <p className="mb-6 text-gray-300 max-w-md">
               Transformamos ideias em eventos memoráveis, cuidando de cada detalhe para que você possa aproveitar o momento sem preocupações.
             </p>
