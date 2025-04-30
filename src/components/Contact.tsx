@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -111,7 +111,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-secondary mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Telefone</h4>
-                    <p className="text-gray-600"><a href="tel:+5511999999999" className="hover:text-secondary">(11) 99999-9999</a></p>
+                    <p className="text-gray-600"><a href="tel:+5584994617848" className="hover:text-secondary">(84) 99461-7848</a></p>
                   </div>
                 </div>
                 
@@ -119,7 +119,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-secondary mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-gray-600"><a href="mailto:contato@eventpro.com.br" className="hover:text-secondary">contato@eventpro.com.br</a></p>
+                    <p className="text-gray-600"><a href="mailto:contato@hcsports.com.br" className="hover:text-secondary">contato@hcsports.com.br</a></p>
                   </div>
                 </div>
                 
@@ -135,22 +135,15 @@ const Contact = () => {
               <div className="mt-10">
                 <h4 className="font-semibold mb-4">Redes Sociais</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
+                  <a href="https://instagram.com/hcsportsbr" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
                     <Instagram className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
-                    <Linkedin className="h-5 w-5" />
                   </a>
                 </div>
               </div>
 
               <div className="mt-10 p-5 bg-primary text-white rounded-lg">
                 <h4 className="font-semibold mb-2">Horário de Atendimento</h4>
-                <p className="mb-2">Segunda a Sexta: 9h às 18h</p>
-                <p>Sábado: 9h às 12h</p>
+                <p>Segunda a Sexta: 9h às 18h</p>
               </div>
             </div>
           </div>

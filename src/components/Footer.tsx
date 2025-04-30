@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Facebook, Linkedin, ArrowUp } from 'lucide-react';
+import { Instagram, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -19,14 +19,8 @@ const Footer = () => {
               Transformamos ideias em eventos memoráveis, cuidando de cada detalhe para que você possa aproveitar o momento sem preocupações.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
+              <a href="https://instagram.com/hcsportsbr" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -82,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-gray-300">
                 <span className="block font-medium">Telefone:</span>
-                <a href="tel:+5511999999999" className="hover:text-secondary">(11) 99999-9999</a>
+                <a href="tel:+5584994617848" className="hover:text-secondary">(84) 99461-7848</a>
               </li>
               <li className="text-gray-300">
                 <span className="block font-medium">Email:</span>
