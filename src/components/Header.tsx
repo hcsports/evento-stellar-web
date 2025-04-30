@@ -49,7 +49,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <h1 className="font-montserrat font-bold text-xl md:text-2xl">
-            <span className="text-secondary">Event</span>Pro
+            <span className="text-secondary">HC</span> SPORTS
           </h1>
         </div>
         
@@ -81,7 +81,7 @@ const Header = () => {
           </button>
           <Button 
             onClick={() => handleNavClick('contact')}
-            className="bg-secondary text-primary hover:bg-secondary/90"
+            className="bg-secondary text-white hover:bg-secondary/90"
           >
             Contato
           </Button>
@@ -126,7 +126,7 @@ const Header = () => {
             </button>
             <Button 
               onClick={() => handleNavClick('contact')}
-              className="bg-secondary text-primary hover:bg-secondary/90 w-full"
+              className="bg-secondary text-white hover:bg-secondary/90 w-full"
             >
               Contato
             </Button>

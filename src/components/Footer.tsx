@@ -13,19 +13,19 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <h3 className="font-montserrat font-bold text-xl mb-4">
-              <span className="text-secondary">Event</span>Pro
+              <span className="text-secondary">HC</span> SPORTS
             </h3>
             <p className="mb-6 text-gray-300 max-w-md">
               Transformamos ideias em eventos memoráveis, cuidando de cada detalhe para que você possa aproveitar o momento sem preocupações.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
+              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
+              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors">
+              <a href="#" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -86,7 +86,7 @@ const Footer = () => {
               </li>
               <li className="text-gray-300">
                 <span className="block font-medium">Email:</span>
-                <a href="mailto:contato@eventpro.com.br" className="hover:text-secondary">contato@eventpro.com.br</a>
+                <a href="mailto:contato@hcsports.com.br" className="hover:text-secondary">contato@hcsports.com.br</a>
               </li>
               <li className="text-gray-300">
                 <span className="block font-medium">Endereço:</span>
@@ -103,11 +103,11 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} EventPro. Todos os direitos reservados.
+            © {new Date().getFullYear()} HC SPORTS. Todos os direitos reservados.
           </p>
           <button 
             onClick={scrollToTop}
-            className="mt-4 md:mt-0 bg-secondary text-primary h-10 w-10 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+            className="mt-4 md:mt-0 bg-secondary text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-white hover:text-secondary transition-colors"
           >
             <ArrowUp className="h-5 w-5" />
           </button>

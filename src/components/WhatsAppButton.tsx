@@ -4,12 +4,12 @@ import React from 'react';
 const WhatsAppButton = () => {
   return (
     <a 
-      href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20produção%20de%20eventos." 
+      href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20produção%20de%20eventos%20esportivos." 
       target="_blank" 
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 whatsapp-button"
     >
-      <div className="bg-[#25D366] text-white p-3.5 rounded-full">
+      <div className="bg-secondary text-white p-3.5 rounded-full">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           width="28" 

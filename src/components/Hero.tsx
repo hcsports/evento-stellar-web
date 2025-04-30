@@ -15,19 +15,19 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat" 
       style={{ 
-        backgroundImage: "linear-gradient(rgba(26, 34, 56, 0.8), rgba(26, 34, 56, 0.8)), url('https://images.unsplash.com/photo-1561489413-985b06da5bee?auto=format&fit=crop&q=80&w=1470')" 
+        backgroundImage: "linear-gradient(rgba(44, 44, 44, 0.8), rgba(44, 44, 44, 0.8)), url('https://images.unsplash.com/photo-1561489413-985b06da5bee?auto=format&fit=crop&q=80&w=1470')" 
       }}
     >
       <div className="container mx-auto px-4 py-16 md:py-32">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Transformamos ideias em <span className="text-secondary">eventos memoráveis</span>
+            Transformamos ideias em <span className="text-secondary">eventos esportivos memoráveis</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
-            Produção profissional de eventos corporativos, sociais e culturais com excelência em cada detalhe.
+            Produção profissional de eventos esportivos corporativos, sociais e culturais com excelência em cada detalhe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button onClick={scrollToContact} className="bg-secondary text-primary hover:bg-secondary/90 text-lg px-8 py-6">
+            <Button onClick={scrollToContact} className="bg-secondary text-white hover:bg-secondary/90 text-lg px-8 py-6">
               Solicitar Orçamento
             </Button>
             <Button 
