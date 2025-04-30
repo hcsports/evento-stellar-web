@@ -1,0 +1,106 @@
+
+import React, { useEffect, useRef } from 'react';
+
+const testimonials = [
+  {
+    name: "Amanda Oliveira",
+    company: "Tech Solutions Inc.",
+    testimonial: "A equipe foi extremamente profissional e atenciosa. Nosso evento corporativo foi um sucesso absoluto graças ao planejamento impecável e execução perfeita.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=1522",
+    delay: 0
+  },
+  {
+    name: "Ricardo Mendes",
+    company: "Global Events",
+    testimonial: "Contratamos para organizar nossa conferência anual e superaram todas as expectativas. A atenção aos detalhes e a capacidade de resolver problemas na hora foi impressionante.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=1470",
+    delay: 200
+  },
+  {
+    name: "Carolina Santos",
+    company: "Marketing Digital",
+    testimonial: "O evento de lançamento do nosso produto foi perfeito! Cada detalhe foi cuidadosamente planejado e executado, criando uma experiência memorável para todos os convidados.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=1470",
+    delay: 400
+  }
+];
+
+const Testimonials = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToObserve = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    if (elementsToObserve) {
+      elementsToObserve.forEach(el => observer.observe(el));
+    }
+
+    return () => {
+      if (elementsToObserve) {
+        elementsToObserve.forEach(el => observer.unobserve(el));
+      }
+    };
+  }, []);
+
+  return (
+    <section className="py-20 bg-primary text-white" ref={sectionRef}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">O que dizem nossos clientes</h2>
+          <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p className="text-gray-300">
+            A satisfação de nossos clientes é nosso maior orgulho e motivação
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="animate-on-scroll bg-white/10 backdrop-blur-sm p-6 rounded-lg"
+              style={{ transitionDelay: `${testimonial.delay}ms` }}
+            >
+              <div className="flex items-center mb-4">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name} 
+                  className="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                  <p className="text-gray-300 text-sm">{testimonial.company}</p>
+                </div>
+              </div>
+              <p className="text-gray-200 italic">"{testimonial.testimonial}"</p>
+              <div className="mt-4 flex">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <svg 
+                    key={star}
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-secondary" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
