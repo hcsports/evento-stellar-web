@@ -91,7 +91,7 @@ const Services = () => {
             <div>
               <div className="bg-secondary text-primary h-14 w-14 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">4</div>
               <h4 className="text-lg font-semibold mb-2">Realização</h4>
-              <p className="text-gray-600">Garantimos o sucesso do evento com excelência</p>
+              <p className="text-gray-600">Garantimos o sucesso do seu evento</p>
             </div>
           </div>
         </div>
