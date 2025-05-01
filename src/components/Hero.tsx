@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from './ui/button';
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-16 md:py-32">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Transformamos ideias em <span className="text-secondary">eventos esportivos memoráveis</span>
+            Transformamos ideias em <span className="text-secondary">eventos esportivos</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
             Produção profissional de eventos esportivos corporativos, sociais e culturais com excelência em cada detalhe.
