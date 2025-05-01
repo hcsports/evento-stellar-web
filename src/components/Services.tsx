@@ -1,6 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
-import { Calendar, Users, Briefcase, ShoppingCart, WhatsApp } from 'lucide-react';
+import { Calendar, Users, Briefcase, ShoppingCart, MessageSquare } from 'lucide-react';
+
 const ServicesData = [{
   title: "Eventos Corporativos",
   description: "Conferências, workshops, convenções, lançamentos de produtos e eventos de integração pensados para alcançar os objetivos da sua empresa.",

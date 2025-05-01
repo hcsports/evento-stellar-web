@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WhatsApp } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 const WhatsAppButton = () => {
   return (
@@ -11,7 +11,7 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-50 whatsapp-button"
     >
       <div className="bg-secondary text-white p-3.5 rounded-full">
-        <WhatsApp size={28} className="text-white" />
+        <MessageSquare size={28} className="text-white" />
       </div>
     </a>
   );
