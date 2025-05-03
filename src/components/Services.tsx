@@ -50,7 +50,7 @@ const Services = () => {
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Nossos Serviços</h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-gray-600">Oferecemos soluções completas para diversos tipos de eventos esportivos.</p>
+          <p className="text-white">Oferecemos soluções completas para diversos tipos de eventos esportivos.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
