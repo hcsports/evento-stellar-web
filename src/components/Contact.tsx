@@ -108,10 +108,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-10 p-5 bg-primary text-white rounded-lg">
-                <h4 className="font-semibold mb-2">Horário de Atendimento</h4>
-                <p>Segunda a Sexta: 9h às 18h</p>
-              </div>
+              
             </div>
           </div>
         </div>
