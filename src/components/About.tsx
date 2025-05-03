@@ -46,17 +46,17 @@ const About = () => {
               </div>
               <div className="animate-on-scroll bg-white p-6 rounded-lg shadow-sm border border-gray-100 delay-100">
                 <Users className="h-10 w-10 text-secondary mb-4" />
-                <h4 className="text-xl font-semibold mb-2">+80.000</h4>
-                <p className="text-gray-600">Pessoas impactadas</p>
+                <h4 className="text-xl font-semibold mb-2">+200.000</h4>
+                <p className="text-gray-600">Atletas impactados</p>
               </div>
               <div className="animate-on-scroll bg-white p-6 rounded-lg shadow-sm border border-gray-100 delay-200">
                 <Award className="h-10 w-10 text-secondary mb-4" />
                 <h4 className="text-xl font-semibold mb-2">+15</h4>
-                <p className="text-gray-600">Anos de experiência</p>
+                <p className="text-gray-600">Anos de mercado</p>
               </div>
               <div className="animate-on-scroll bg-white p-6 rounded-lg shadow-sm border border-gray-100 delay-300">
                 <Briefcase className="h-10 w-10 text-secondary mb-4" />
-                <h4 className="text-xl font-semibold mb-2">+60</h4>
+                <h4 className="text-xl font-semibold mb-2">+90</h4>
                 <p className="text-gray-600">Clientes satisfeitos</p>
               </div>
             </div>
