@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from './ui/button';
+
 const Hero = () => {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -10,6 +11,7 @@ const Hero = () => {
       });
     }
   };
+
   return <section id="home" className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style={{
     backgroundImage: "linear-gradient(rgba(44, 44, 44, 0.8), rgba(44, 44, 44, 0.8)), url('https://images.unsplash.com/photo-1561489413-985b06da5bee?auto=format&fit=crop&q=80&w=1470')"
   }}>
@@ -27,7 +29,7 @@ const Hero = () => {
             </Button>
             <Button onClick={() => document.getElementById('services')?.scrollIntoView({
             behavior: 'smooth'
-          })} variant="outline" className="border-white text-lg px-8 py-6 bg-black/0">
+          })} variant="outline" className="border-white text-white text-lg px-8 py-6 bg-black/0">
               Conheça Nossos Serviços
             </Button>
           </div>
@@ -45,4 +47,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
