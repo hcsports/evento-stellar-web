@@ -1,27 +1,21 @@
-
 import React from 'react';
 import { Instagram, ArrowUp } from 'lucide-react';
-
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <footer className="bg-primary text-white">
+  return <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="mb-4">
-              <img 
-                src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" 
-                alt="HC SPORTS" 
-                className="h-12"
-              />
+              <img src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" alt="HC SPORTS" className="h-12" />
             </div>
-            <p className="mb-6 text-gray-300 max-w-md">
-              Transformamos ideias em eventos memoráveis, cuidando de cada detalhe para que você possa aproveitar o momento sem preocupações.
-            </p>
+            <p className="mb-6 text-gray-300 max-w-md">Cuidamos de cada detalhe, da ideia à execução.
+Nosso time joga junto, com energia e criatividade..</p>
             <div className="flex space-x-4">
               <a href="https://instagram.com/hcsportsbr" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
@@ -33,42 +27,37 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Navegação</h4>
             <ul className="space-y-2">
               <li>
-                <button 
-                  onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-secondary transition-colors"
-                >
+                <button onClick={() => document.getElementById('home')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-secondary transition-colors">
                   Início
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-secondary transition-colors"
-                >
+                <button onClick={() => document.getElementById('about')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-secondary transition-colors">
                   Sobre
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-secondary transition-colors"
-                >
+                <button onClick={() => document.getElementById('services')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-secondary transition-colors">
                   Serviços
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-secondary transition-colors"
-                >
+                <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-secondary transition-colors">
                   Portfólio
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-secondary transition-colors"
-                >
+                <button onClick={() => document.getElementById('contact')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-secondary transition-colors">
                   Contato
                 </button>
               </li>
@@ -89,7 +78,7 @@ const Footer = () => {
               <li className="text-gray-300">
                 <span className="block font-medium">Endereço:</span>
                 <address className="not-italic">
-                  Av. Paulista, 1000 - Bela Vista<br/>
+                  Av. Paulista, 1000 - Bela Vista<br />
                   São Paulo - SP, 01310-100
                 </address>
               </li>
@@ -103,16 +92,11 @@ const Footer = () => {
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} HC SPORTS. Todos os direitos reservados.
           </p>
-          <button 
-            onClick={scrollToTop}
-            className="mt-4 md:mt-0 bg-secondary text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-white hover:text-secondary transition-colors"
-          >
+          <button onClick={scrollToTop} className="mt-4 md:mt-0 bg-secondary text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-white hover:text-secondary transition-colors">
             <ArrowUp className="h-5 w-5" />
           </button>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
