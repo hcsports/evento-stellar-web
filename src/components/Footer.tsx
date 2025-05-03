@@ -14,8 +14,7 @@ const Footer = () => {
             <div className="mb-4">
               <img src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" alt="HC SPORTS" className="h-12" />
             </div>
-            <p className="mb-6 text-gray-300 max-w-md">Cuidamos de cada detalhe, da ideia à execução.
-Nosso time joga junto, com energia e criatividade..</p>
+            <p className="mb-6 text-gray-300 max-w-md">Respiramos esporte e vivemos eventos.</p>
             <div className="flex space-x-4">
               <a href="https://instagram.com/hcsportsbr" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
