@@ -1,25 +1,26 @@
+
 import React, { useEffect, useRef } from 'react';
-import { Calendar, Users, Briefcase, ShoppingCart, MessageSquare } from 'lucide-react';
+import { Briefcase, CalendarCheck, ClipboardCheck, Megaphone } from 'lucide-react';
 
 const ServicesData = [{
   title: "Eventos Corporativos",
-  description: "Conferências, workshops, convenções, lançamentos de produtos e eventos de integração pensados para alcançar os objetivos da sua empresa.",
+  description: "Organizamos experiências esportivas personalizadas para empresas, proporcionando bem-estar e fortalecimento da cultura organizacional.",
   icon: <Briefcase className="h-12 w-12 mb-4 text-secondary" />,
   delay: 0
 }, {
-  title: "Eventos Sociais",
-  description: "Casamentos, aniversários, formaturas e celebrações especiais produzidos com carinho e atenção aos detalhes para momentos inesquecíveis.",
-  icon: <Users className="h-12 w-12 mb-4 text-secondary" />,
+  title: "Sistemas de Inscrições",
+  description: "Plataforma para gestão de inscrições em eventos esportivos. Interface intuitiva, cadastro rápido e relatórios em tempo real. Ideal para corridas e torneios em geral.",
+  icon: <CalendarCheck className="h-12 w-12 mb-4 text-secondary" />,
   delay: 100
 }, {
-  title: "Eventos Culturais",
-  description: "Festivais, exposições, shows e performances artísticas que valorizam a cultura e proporcionam experiências únicas ao público.",
-  icon: <Calendar className="h-12 w-12 mb-4 text-secondary" />,
+  title: "Planejamento",
+  description: "Cuidamos de toda a estratégia, logística e cronograma para garantir um evento esportivo bem-sucedido, do briefing à execução.",
+  icon: <ClipboardCheck className="h-12 w-12 mb-4 text-secondary" />,
   delay: 200
 }, {
-  title: "Feiras e Exposições",
-  description: "Planejamento e execução de feiras, exposições e estandes para promover marcas, produtos e serviços de forma estratégica.",
-  icon: <ShoppingCart className="h-12 w-12 mb-4 text-secondary" />,
+  title: "Marketing Esportivo",
+  description: "Criamos estratégias de divulgação, ativação de marca e engajamento do público, aumentando a visibilidade e o impacto do seu evento esportivo.",
+  icon: <Megaphone className="h-12 w-12 mb-4 text-secondary" />,
   delay: 300
 }];
 const Services = () => {
