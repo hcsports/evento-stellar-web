@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return <section id="home" className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style={{
-    backgroundImage: "linear-gradient(rgba(44, 44, 44, 0.8), rgba(44, 44, 44, 0.8)), url('https://images.unsplash.com/photo-1561489413-985b06da5bee?auto=format&fit=crop&q=80&w=1470')"
+    backgroundImage: "linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80')"
   }}>
       <div className="container mx-auto px-4 py-16 md:py-32">
         <div className="max-w-3xl animate-fade-in">
