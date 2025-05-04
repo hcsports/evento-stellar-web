@@ -50,6 +50,21 @@ const Contact = () => {
     // Limit to 11 digits
     const limitedDigits = digits.slice(0, 11);
     
+    // Format as (XX) XXXXX-XXXX if enough digits
+    if (limitedDigits.length >= 2) {
+      let formattedValue = `(${limitedDigits.slice(0, 2)})`;
+      
+      if (limitedDigits.length > 2) {
+        formattedValue += ` ${limitedDigits.slice(2, 7)}`;
+        
+        if (limitedDigits.length > 7) {
+          formattedValue += `-${limitedDigits.slice(7, 11)}`;
+        }
+      }
+      
+      return formattedValue;
+    }
+    
     return limitedDigits;
   };
 
@@ -61,7 +76,7 @@ const Contact = () => {
       const emailBody = `
         Nome: ${data.name}
         E-mail: ${data.email}
-        Telefone: ${data.phone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")}
+        Telefone: ${data.phone.replace(/\D/g, "")}
         Mensagem: ${data.message}
       `;
       
@@ -167,7 +182,7 @@ const Contact = () => {
                 <FormField
                   control={form.control}
                   name="phone"
-                  render={({ field: { onChange, ...fieldProps } }) => (
+                  render={({ field: { onChange, value, ...fieldProps } }) => (
                     <FormItem>
                       <FormLabel className="block text-gray-700 font-medium mb-2">Telefone</FormLabel>
                       <FormControl>
@@ -175,10 +190,11 @@ const Contact = () => {
                           type="tel"
                           placeholder="(00) 00000-0000" 
                           className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                          value={formatPhoneNumber(value)}
                           onChange={(e) => {
-                            const formattedValue = formatPhoneNumber(e.target.value);
-                            e.target.value = formattedValue;
-                            onChange(e);
+                            // Store only the raw digits in form state
+                            const digits = e.target.value.replace(/\D/g, "").slice(0, 11);
+                            onChange(digits);
                           }}
                           {...fieldProps} 
                         />
