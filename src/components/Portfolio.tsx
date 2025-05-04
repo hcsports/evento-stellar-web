@@ -19,17 +19,17 @@ const portfolioItems = [
     delay: 100
   }, 
   {
-    title: "Self Run",
-    date: "Recife, 20 de julho de 2025",
-    image: "https://images.unsplash.com/photo-1509609644831-7b30851f35d4?auto=format&fit=crop&q=80&w=1470",
-    url: "https://selfrun.com.br",
-    delay: 200
-  }, 
-  {
     title: "Corrida Soldados do Fogo",
     date: "Natal, 06 de julho de 2025",
     image: "https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&q=80&w=1470",
     url: "https://corridasoldadosdofogo.com.br",
+    delay: 200
+  },
+  {
+    title: "Self Run",
+    date: "Recife, 20 de julho de 2025",
+    image: "https://images.unsplash.com/photo-1509609644831-7b30851f35d4?auto=format&fit=crop&q=80&w=1470",
+    url: "https://selfrun.com.br",
     delay: 300
   }, 
   {
