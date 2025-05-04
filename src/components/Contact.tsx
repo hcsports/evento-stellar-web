@@ -1,9 +1,97 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import { toast } from './ui/use-toast';
+import { 
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
+  email: z.string().email("E-mail inválido"),
+  phone: z.string()
+    .min(11, "Telefone deve ter 11 dígitos")
+    .max(11, "Telefone deve ter no máximo 11 dígitos")
+    .regex(/^\d+$/, "Telefone deve conter apenas números"),
+  message: z.string().min(5, "Mensagem deve ter pelo menos 5 caracteres"),
+});
+
+type ContactFormValues = z.infer<typeof contactFormSchema>;
+
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digits
+    const digits = value.replace(/\D/g, "");
+    
+    // Limit to 11 digits
+    const limitedDigits = digits.slice(0, 11);
+    
+    return limitedDigits;
+  };
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Construct the email body
+      const emailBody = `
+        Nome: ${data.name}
+        E-mail: ${data.email}
+        Telefone: ${data.phone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")}
+        Mensagem: ${data.message}
+      `;
+      
+      // In a real implementation, you'd use a backend service to send this email
+      // For now, we'll simulate a successful submission
+      console.log("Enviando email para contato@hcsports.com.br");
+      console.log(emailBody);
+      
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+      });
+      
+      // Reset form
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,16 +102,19 @@ const Contact = () => {
     }, {
       threshold: 0.1
     });
+    
     const elementsToObserve = sectionRef.current?.querySelectorAll('.animate-on-scroll');
     if (elementsToObserve) {
       elementsToObserve.forEach(el => observer.observe(el));
     }
+    
     return () => {
       if (elementsToObserve) {
         elementsToObserve.forEach(el => observer.unobserve(el));
       }
     };
   }, []);
+  
   return <section id="contact" className="py-20 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-16 text-center">
@@ -34,40 +125,95 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="animate-on-scroll">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Nome</label>
-                  <input type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Seu nome" />
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-gray-700 font-medium mb-2">Nome</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="Seu nome" 
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-gray-700 font-medium mb-2">E-mail</FormLabel>
+                        <FormControl>
+                          <Input 
+                            type="email"
+                            placeholder="seu.email@exemplo.com" 
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="seu.email@exemplo.com" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Telefone</label>
-                <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="(00) 00000-0000" />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">Assunto</label>
-                <select id="subject" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
-                  <option value="">Selecione uma opção</option>
-                  <option value="orcamento">Solicitar orçamento</option>
-                  <option value="corporativo">Evento Corporativo</option>
-                  <option value="social">Evento Social</option>
-                  <option value="cultural">Evento Cultural</option>
-                  <option value="outro">Outro</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Mensagem</label>
-                <textarea id="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Descreva seu evento ou dúvida..."></textarea>
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3">
-                Enviar Mensagem
-              </Button>
-            </form>
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field: { onChange, ...fieldProps } }) => (
+                    <FormItem>
+                      <FormLabel className="block text-gray-700 font-medium mb-2">Telefone</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="tel"
+                          placeholder="(00) 00000-0000" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                          onChange={(e) => {
+                            const formattedValue = formatPhoneNumber(e.target.value);
+                            e.target.value = formattedValue;
+                            onChange(e);
+                          }}
+                          {...fieldProps} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="block text-gray-700 font-medium mb-2">Mensagem</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          rows={5}
+                          placeholder="Descreva seu evento ou dúvida..." 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-3"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                </Button>
+              </form>
+            </Form>
           </div>
 
           <div className="animate-on-scroll">
@@ -108,8 +254,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              
             </div>
           </div>
         </div>
