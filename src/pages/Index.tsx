@@ -14,7 +14,7 @@ import ScrollObserver from '../components/ScrollObserver';
 const Index = () => {
   // Update page title and meta for SEO
   useEffect(() => {
-    document.title = 'HC SPORTS | Produção de Eventos Esportivos Profissional';
+    document.title = 'HC Sports | Excelência em eventos esportivos';
   }, []);
 
   return (

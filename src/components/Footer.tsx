@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram, ArrowUp } from 'lucide-react';
 const Footer = () => {
@@ -77,8 +78,8 @@ const Footer = () => {
               <li className="text-gray-300">
                 <span className="block font-medium">Endereço:</span>
                 <address className="not-italic">
-                  Av. Paulista, 1000 - Bela Vista<br />
-                  São Paulo - SP, 01310-100
+                  Rua Touros, 2506-A - Lagoa Nova<br />
+                  Natal - RN, 59063-030
                 </address>
               </li>
             </ul>

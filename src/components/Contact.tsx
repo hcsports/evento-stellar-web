@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
@@ -94,7 +95,7 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-secondary mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Localização</h4>
-                    <p className="text-gray-600">Av. Paulista, 1000 - Bela Vista<br />São Paulo - SP, 01310-100</p>
+                    <p className="text-gray-600">Rua Touros, 2506-A - Lagoa Nova<br />Natal - RN, 59063-030</p>
                   </div>
                 </div>
               </div>
