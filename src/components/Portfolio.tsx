@@ -77,7 +77,7 @@ const Portfolio = () => {
   return <section id="portfolio" className="py-20 bg-gray-50" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">AGENDA HC SPORTS</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Agenda HC Sports</h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-gray-600">Participe dos eventos que são referência e vamos juntos.</p>
         </div>
@@ -100,7 +100,7 @@ const Portfolio = () => {
                   </div>
                   <Button 
                     onClick={() => window.open(item.url, '_blank')} 
-                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white"
                   >
                     SAIBA MAIS
                   </Button>
