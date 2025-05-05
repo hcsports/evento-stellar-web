@@ -18,8 +18,13 @@ const portfolioItems = [
   }, 
   {
     title: "JP News Natal RUN",
-    date: "Natal, 08 de junho",
-    image: "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&q=80&w=1470",
+    date: "Natal, 08 de junho de 2025",
+    image: "/lovable-uploads/78515bd4-374d-48c7-b69e-085d924f24af.jpg",
+    backgroundStyle: {
+      background: "linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%)",
+      padding: "12px",
+      borderRadius: "8px"
+    },
     url: "https://jpnewsnatalrun.com.br",
     delay: 100
   }, 
@@ -93,7 +98,7 @@ const Portfolio = () => {
               transitionDelay: `${item.delay}ms`
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                {index === 0 ? (
+                {index === 0 || index === 1 ? (
                   <div style={item.backgroundStyle || {}}>
                     <img src={item.image} alt={item.title} className="w-full object-contain" />
                   </div>
