@@ -26,7 +26,12 @@ const portfolioItems = [
   {
     title: "Corrida Soldados do Fogo",
     date: "Natal, 06 de julho de 2025",
-    image: "https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&q=80&w=1470",
+    image: "/lovable-uploads/456f6c6d-1118-45fc-8f66-317a56499ac8.png",
+    backgroundStyle: {
+      background: "linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)",
+      padding: "12px",
+      borderRadius: "8px"
+    },
     url: "https://corridasoldadosdofogo.com.br",
     delay: 200
   },
@@ -93,7 +98,7 @@ const Portfolio = () => {
               transitionDelay: `${item.delay}ms`
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                {index === 0 ? (
+                {(index === 0 || index === 2) ? (
                   <div style={item.backgroundStyle || {}}>
                     <img src={item.image} alt={item.title} className="w-full object-contain" />
                   </div>
