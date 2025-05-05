@@ -33,7 +33,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="animate-on-scroll mb-8">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Referência em evento esportivo</h3>
+              <h3 className="text-2xl font-bold mb-4 text-primary">Excelência em eventos esportivos</h3>
               <p className="mb-6 text-gray-700">Somos especialistas em soluções completas para eventos esportivos, oferecendo gestão, produção e ativações de marca com alto padrão. Unimos expertise e inovação para entregar experiências únicas ao público e valor real aos patrocinadores, com comprometimento, performance e foco em resultados.</p>
               <p className="text-gray-700">Criamos experiências esportivas com o foco de transformar eventos em momentos inesquecíveis, com emoção, organização e muita energia. Trabalhamos com paixão pelo esporte e respeito pelo público.</p>
             </div>
