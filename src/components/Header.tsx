@@ -79,7 +79,7 @@ const Header = () => {
             onClick={() => handleNavClick('portfolio')} 
             className="text-white hover:text-secondary transition-colors"
           >
-            Portfólio
+            Agenda
           </button>
           <Button 
             onClick={() => handleNavClick('contact')}
@@ -124,7 +124,7 @@ const Header = () => {
               onClick={() => handleNavClick('portfolio')}
               className="py-2 text-white hover:text-secondary transition-colors text-left"
             >
-              Portfólio
+              Agenda
             </button>
             <Button 
               onClick={() => handleNavClick('contact')}
