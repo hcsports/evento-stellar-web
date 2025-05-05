@@ -7,7 +7,12 @@ const portfolioItems = [
   {
     title: "Corrida da Água - CAERN",
     date: "Natal, 13 de abril de 2025",
-    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=1470",
+    image: "/lovable-uploads/de6d9dbb-bfc2-4715-a81c-b53ecf22250b.png",
+    backgroundStyle: {
+      background: "linear-gradient(90deg, #accbee 0%, #e7f0fd 100%)",
+      padding: "12px",
+      borderRadius: "8px"
+    },
     url: "https://corridadaagua.com.br",
     delay: 0
   }, 
@@ -88,7 +93,13 @@ const Portfolio = () => {
               transitionDelay: `${item.delay}ms`
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+                {index === 0 ? (
+                  <div style={item.backgroundStyle || {}}>
+                    <img src={item.image} alt={item.title} className="w-full object-contain" />
+                  </div>
+                ) : (
+                  <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
                   <div className="flex items-center mb-4 text-gray-600">
