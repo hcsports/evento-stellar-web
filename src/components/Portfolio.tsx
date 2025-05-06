@@ -35,7 +35,7 @@ const portfolioItems = [
   {
     title: "Meia Maratona do Sol - Sicredi",
     date: "Natal, 20 e 21 de setembro de 2025",
-    image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80&w=1470",
+    image: "/lovable-uploads/5fd35488-7fe9-48d0-b486-ceda5b5422a9.png",
     url: "https://meiadosol.com.br",
     delay: 400
   }, 
