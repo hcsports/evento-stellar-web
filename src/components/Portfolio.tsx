@@ -90,11 +90,11 @@ const Portfolio = () => {
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white h-full flex flex-col">
                 <div className="w-full h-48 overflow-hidden">
-                  <AspectRatio ratio={16/9} className="h-full">
+                  <AspectRatio ratio={16/9}>
                     <img 
                       src={item.image} 
                       alt={item.title} 
-                      className="w-full h-full object-cover object-center" 
+                      className="w-full h-full object-contain" 
                     />
                   </AspectRatio>
                 </div>
