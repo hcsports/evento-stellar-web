@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import { Calendar, MapPin } from 'lucide-react';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const portfolioItems = [
   {
@@ -42,7 +43,7 @@ const portfolioItems = [
   {
     title: "Meia Maratona PRF 191",
     date: "Natal, 09 de novembro de 2025",
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1470",
+    image: "/lovable-uploads/7e70653f-379c-4581-bf86-62c3e72f8582.png",
     url: "https://meiamaratonaprf191.com.br",
     delay: 500
   }
@@ -87,9 +88,17 @@ const Portfolio = () => {
             <div key={index} className="animate-on-scroll" style={{
               transitionDelay: `${item.delay}ms`
             }}>
-              <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
+              <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white h-full flex flex-col">
+                <div className="w-full h-48 overflow-hidden">
+                  <AspectRatio ratio={16/9} className="h-full">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover object-center" 
+                    />
+                  </AspectRatio>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
                   <div className="flex items-center mb-4 text-gray-600">
                     <div className="flex items-center mr-4">
@@ -98,12 +107,14 @@ const Portfolio = () => {
                       <span className="text-sm">{item.date}</span>
                     </div>
                   </div>
-                  <Button 
-                    onClick={() => window.open(item.url, '_blank')} 
-                    className="w-full bg-secondary hover:bg-secondary/90 text-white"
-                  >
-                    SAIBA MAIS
-                  </Button>
+                  <div className="mt-auto">
+                    <Button 
+                      onClick={() => window.open(item.url, '_blank')} 
+                      className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                    >
+                      SAIBA MAIS
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
