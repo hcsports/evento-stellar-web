@@ -89,14 +89,14 @@ const Portfolio = () => {
               transitionDelay: `${item.delay}ms`
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white h-full flex flex-col">
-                <div className="w-full h-48 overflow-hidden">
-                  <AspectRatio ratio={16/9}>
+                <div className="w-full h-48 overflow-hidden flex items-center justify-center">
+                  <div className="w-full h-full p-2">
                     <img 
                       src={item.image} 
                       alt={item.title} 
-                      className="w-full h-full object-contain" 
+                      className="w-full h-full object-contain max-h-44" 
                     />
-                  </AspectRatio>
+                  </div>
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
