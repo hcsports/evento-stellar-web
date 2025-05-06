@@ -8,11 +8,6 @@ const portfolioItems = [
     title: "Corrida da Água - CAERN",
     date: "Natal, 13 de abril de 2025",
     image: "/lovable-uploads/de6d9dbb-bfc2-4715-a81c-b53ecf22250b.png",
-    backgroundStyle: {
-      background: "linear-gradient(90deg, #accbee 0%, #e7f0fd 100%)",
-      padding: "12px",
-      borderRadius: "8px"
-    },
     url: "https://corridadaagua.com.br",
     delay: 0
   }, 
@@ -27,18 +22,13 @@ const portfolioItems = [
     title: "Corrida Soldados do Fogo",
     date: "Natal, 06 de julho de 2025",
     image: "/lovable-uploads/456f6c6d-1118-45fc-8f66-317a56499ac8.png",
-    backgroundStyle: {
-      background: "linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)",
-      padding: "12px",
-      borderRadius: "8px"
-    },
     url: "https://corridasoldadosdofogo.com.br",
     delay: 200
   },
   {
     title: "Self Run",
     date: "Recife, 20 de julho de 2025",
-    image: "https://images.unsplash.com/photo-1509609644831-7b30851f35d4?auto=format&fit=crop&q=80&w=1470",
+    image: "/lovable-uploads/19b29531-e96a-4a92-85d9-f59b288d09be.png",
     url: "https://selfrun.com.br",
     delay: 300
   }, 
@@ -98,13 +88,7 @@ const Portfolio = () => {
               transitionDelay: `${item.delay}ms`
             }}>
               <div className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                {(index === 0 || index === 2) ? (
-                  <div style={item.backgroundStyle || {}}>
-                    <img src={item.image} alt={item.title} className="w-full object-contain" />
-                  </div>
-                ) : (
-                  <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
-                )}
+                <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
                   <div className="flex items-center mb-4 text-gray-600">
