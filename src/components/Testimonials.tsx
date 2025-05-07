@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const testimonials = [
   {
@@ -71,11 +72,10 @@ const Testimonials = () => {
               style={{ transitionDelay: `${testimonial.delay}ms` }}
             >
               <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="w-14 h-14 rounded-full object-cover mr-4"
-                />
+                <Avatar className="w-14 h-14 mr-4 border-2 border-secondary">
+                  <AvatarImage src={testimonial.image} alt={testimonial.name} className="object-cover" />
+                  <AvatarFallback>{testimonial.name.substring(0, 2)}</AvatarFallback>
+                </Avatar>
                 <div>
                   <h4 className="font-semibold text-lg">{testimonial.name}</h4>
                   <p className="text-gray-300 text-sm">{testimonial.company}</p>
