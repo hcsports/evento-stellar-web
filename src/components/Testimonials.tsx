@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from 'react';
 
 const testimonials = [
   {
-    name: "Amanda Oliveira",
-    company: "Tech Solutions Inc.",
-    testimonial: "A equipe foi extremamente profissional e atenciosa. Nosso evento corporativo foi um sucesso absoluto graças ao planejamento impecável e execução perfeita.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=1522",
+    name: "Simone Oyarzabal",
+    company: "CONCAD",
+    testimonial: "A CONCAD se orgulha em ter a HC Sports como parceira nos Jogos Nacionais da Advocacia. Entrega impecável, organização de alto nível e resultado acima do esperado!",
+    image: "/lovable-uploads/db3954ab-ca55-47a2-ac46-31aeb9a647d9.png",
     delay: 0
   },
   {
