@@ -10,10 +10,10 @@ const testimonials = [
     delay: 0
   },
   {
-    name: "Ricardo Mendes",
-    company: "Global Events",
-    testimonial: "Contratamos para organizar nossa conferência anual e superaram todas as expectativas. A atenção aos detalhes e a capacidade de resolver problemas na hora foi impressionante.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=1470",
+    name: "Damião Monteiro Neto",
+    company: "Sicredi Rio Grande do Norte",
+    testimonial: "Patrocinar com a HC Sports é um investimento certeiro: visibilidade e entrega de valor real à marca. O que fortalece o Sicredi-RN e aumenta a nossa conexão com o público.",
+    image: "/lovable-uploads/d84b8963-e474-46cc-b3d5-f9533c563db5.png",
     delay: 200
   },
   {
