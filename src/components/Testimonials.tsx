@@ -72,7 +72,7 @@ const Testimonials = () => {
               style={{ transitionDelay: `${testimonial.delay}ms` }}
             >
               <div className="flex items-center mb-4">
-                <Avatar className="w-14 h-14 mr-4 border-2 border-secondary">
+                <Avatar className="w-14 h-14 mr-4">
                   <AvatarImage src={testimonial.image} alt={testimonial.name} className="object-cover" />
                   <AvatarFallback>{testimonial.name.substring(0, 2)}</AvatarFallback>
                 </Avatar>
