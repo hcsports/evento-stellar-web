@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -7,7 +6,7 @@ const testimonials = [
     name: "Simone Oyarzabal",
     company: "CONCAD",
     testimonial: "A CONCAD se orgulha em ter a HC Sports como parceira nos Jogos Nacionais da Advocacia. Entrega impecável, organização de alto nível e resultado acima do esperado!",
-    image: "/lovable-uploads/db3954ab-ca55-47a2-ac46-31aeb9a647d9.png",
+    image: "/lovable-uploads/f07c7417-6a78-41d9-94d6-6ad0c7117d55.png",
     delay: 0
   },
   {
