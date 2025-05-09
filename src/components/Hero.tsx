@@ -6,12 +6,13 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const backgroundImages = [
+    "/lovable-uploads/f402c7b7-b1d4-400a-b044-821442e2c8d4.png", // Nova imagem do estádio com público (agora primeira)
+    "/lovable-uploads/f435784d-9ec2-4bf2-81b7-e5e9b9c5eae9.png", // Corrida (antes era a última, agora é a segunda)
     "/lovable-uploads/0ebc5303-a5b3-440b-9bce-aecd916fa64f.png", // Jiu-jitsu
     "/lovable-uploads/62f6f6be-9e60-479c-954a-f35368df0c62.png", // Natação
     "/lovable-uploads/141b6512-08f1-4258-aafa-0026a638ddee.png", // Futebol
     "/lovable-uploads/0cff9182-fc36-47b2-a905-89bd0a698db3.png", // Vôlei de praia
     "/lovable-uploads/6a3b9807-36b7-4d3e-99e6-52bb232e4970.png", // Estádio
-    "/lovable-uploads/f435784d-9ec2-4bf2-81b7-e5e9b9c5eae9.png", // Corrida
   ];
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const Hero = () => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Muda a imagem a cada 5 segundos
+    }, 2000); // Alterado para mudar a imagem a cada 2 segundos
 
     return () => clearInterval(interval);
   }, []);
