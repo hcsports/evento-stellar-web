@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 
@@ -6,8 +5,7 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const backgroundImages = [
-    "/lovable-uploads/f402c7b7-b1d4-400a-b044-821442e2c8d4.png", // Nova imagem do estádio com público (agora primeira)
-    "/lovable-uploads/f435784d-9ec2-4bf2-81b7-e5e9b9c5eae9.png", // Corrida (antes era a última, agora é a segunda)
+    "/lovable-uploads/f402c7b7-b1d4-400a-b044-821442e2c8d4.png", // Nova imagem do estádio com público (primeira)
     "/lovable-uploads/0ebc5303-a5b3-440b-9bce-aecd916fa64f.png", // Jiu-jitsu
     "/lovable-uploads/62f6f6be-9e60-479c-954a-f35368df0c62.png", // Natação
     "/lovable-uploads/141b6512-08f1-4258-aafa-0026a638ddee.png", // Futebol
@@ -20,7 +18,7 @@ const Hero = () => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Alterado para mudar a imagem a cada 2 segundos
+    }, 3000); // Alterado para mudar a imagem a cada 3 segundos
 
     return () => clearInterval(interval);
   }, []);
@@ -37,9 +35,12 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(44, 44, 44, 0.8)), url('${backgroundImages[currentImageIndex]}')`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(44, 44, 44, 0.8)), url('${backgroundImages[currentImageIndex]}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-0"></div>
