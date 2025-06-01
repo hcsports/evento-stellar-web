@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const backgroundImages = [
     "/lovable-uploads/f402c7b7-b1d4-400a-b044-821442e2c8d4.png", // Nova imagem do estádio com público (primeira)
@@ -13,7 +15,33 @@ const Hero = () => {
     "/lovable-uploads/6a3b9807-36b7-4d3e-99e6-52bb232e4970.png", // Estádio
   ];
 
+  // Pré-carrega todas as imagens
   useEffect(() => {
+    const loadImages = async () => {
+      const imagePromises = backgroundImages.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = src;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Erro ao carregar imagens:', error);
+        setImagesLoaded(true); // Continua mesmo com erro
+      }
+    };
+
+    loadImages();
+  }, []);
+
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
@@ -21,7 +49,7 @@ const Hero = () => {
     }, 3000); // Alterado para mudar a imagem a cada 3 segundos
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imagesLoaded]);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -35,23 +63,35 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(44, 44, 44, 0.8)), url('${backgroundImages[currentImageIndex]}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-0"></div>
+      {/* Camada de fundo com as imagens */}
+      {backgroundImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url('${image}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+      ))}
+
+      {/* Overlay gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/50 to-black/30 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-20"></div>
       
       {/* Indicadores de slide */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {backgroundImages.map((_, index) => (
           <button 
             key={index}
             onClick={() => setCurrentImageIndex(index)}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
               index === currentImageIndex ? 'bg-secondary' : 'bg-white/50'
             }`}
             aria-label={`Slide ${index + 1}`}
@@ -59,7 +99,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:py-32 z-10">
+      <div className="container mx-auto px-4 py-16 md:py-32 z-30 relative">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
             Transformamos ideias em <span className="text-secondary">eventos esportivos</span>
@@ -80,7 +120,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
         <button onClick={() => document.getElementById('about')?.scrollIntoView({
           behavior: 'smooth'
         })} className="text-white hover:text-secondary transition-colors">
