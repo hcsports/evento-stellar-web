@@ -82,6 +82,10 @@ const Footer = () => {
                   Natal - RN, 59063-030
                 </address>
               </li>
+              <li className="text-gray-300">
+                <span className="block font-medium">CNPJ:</span>
+                13.512.597/0001-03
+              </li>
             </ul>
           </div>
         </div>
