@@ -17,10 +17,10 @@ const testimonials = [
     delay: 200
   },
   {
-    name: "Carolina Santos",
-    company: "Marketing Digital",
-    testimonial: "O evento de lançamento do nosso produto foi perfeito! Cada detalhe foi cuidadosamente planejado e executado, criando uma experiência memorável para todos os convidados.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=1470",
+    name: "Coronel Monteiro",
+    company: "Comandante Geral CBM-RN",
+    testimonial: "A HC Sports transforma dedicação em excelência. Há 14 anos, organiza com maestria a Corrida Soldados do Fogo, honrando a história e a missão do Corpo de Bombeiros do RN.",
+    image: "/lovable-uploads/coronel-monteiro.png",
     delay: 400
   }
 ];
