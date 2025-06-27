@@ -1,7 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,8 +15,8 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -27,107 +26,110 @@ const Header = () => {
   const handleNavClick = (id: string) => {
     setIsMenuOpen(false);
     const element = document.getElementById(id);
-    
+
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-primary text-white shadow-md py-2' : 'bg-transparent text-white py-4'
+        scrolled
+          ? "bg-primary text-white shadow-md py-2"
+          : "bg-transparent text-white py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" 
-            alt="HC SPORTS" 
+          <img
+            src="/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png"
+            alt="HC SPORTS"
             className="h-10 md:h-12"
           />
         </div>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={() => handleNavClick('home')} 
+          <button
+            onClick={() => handleNavClick("home")}
             className="text-white hover:text-secondary transition-colors"
           >
             Início
           </button>
-          <button 
-            onClick={() => handleNavClick('about')} 
+          <button
+            onClick={() => handleNavClick("about")}
             className="text-white hover:text-secondary transition-colors"
           >
             Sobre
           </button>
-          <button 
-            onClick={() => handleNavClick('services')} 
+          <button
+            onClick={() => handleNavClick("services")}
             className="text-white hover:text-secondary transition-colors"
           >
             Serviços
           </button>
-          <button 
-            onClick={() => handleNavClick('portfolio')} 
+          <button
+            onClick={() => handleNavClick("portfolio")}
             className="text-white hover:text-secondary transition-colors"
           >
             Agenda
           </button>
-          <Button 
-            onClick={() => handleNavClick('contact')}
+          <Button
+            onClick={() => handleNavClick("contact")}
             className="bg-secondary text-white hover:bg-secondary/90"
           >
             Contato
           </Button>
         </nav>
-        
+
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={toggleMenu}
           className="md:hidden text-white p-2 focus:outline-none"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
+
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-primary text-white">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <button 
-              onClick={() => handleNavClick('home')}
+            <button
+              onClick={() => handleNavClick("home")}
               className="py-2 text-white hover:text-secondary transition-colors text-left"
             >
               Início
             </button>
-            <button 
-              onClick={() => handleNavClick('about')}
+            <button
+              onClick={() => handleNavClick("about")}
               className="py-2 text-white hover:text-secondary transition-colors text-left"
             >
               Sobre
             </button>
-            <button 
-              onClick={() => handleNavClick('services')}
-              className="py-2 text-white hover:text-secondary transition-colors text-left"
-            >
-              Serviços
-            </button>
-            <button 
-              onClick={() => handleNavClick('portfolio')}
+            <button
+              onClick={() => handleNavClick("portfolio")}
               className="py-2 text-white hover:text-secondary transition-colors text-left"
             >
               Agenda
             </button>
-            <Button 
-              onClick={() => handleNavClick('contact')}
+            <button
+              onClick={() => handleNavClick("services")}
+              className="py-2 text-white hover:text-secondary transition-colors text-left"
+            >
+              Serviços
+            </button>
+            <Button
+              onClick={() => handleNavClick("contact")}
               className="bg-secondary text-white hover:bg-secondary/90 w-full"
             >
               Contato
