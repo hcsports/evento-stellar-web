@@ -72,16 +72,16 @@ const Header = () => {
             Sobre
           </button>
           <button
-            onClick={() => handleNavClick("services")}
-            className="text-white hover:text-secondary transition-colors"
-          >
-            Serviços
-          </button>
-          <button
             onClick={() => handleNavClick("portfolio")}
             className="text-white hover:text-secondary transition-colors"
           >
             Agenda
+          </button> 
+          <button
+            onClick={() => handleNavClick("services")}
+            className="text-white hover:text-secondary transition-colors"
+          >
+            Serviços
           </button>
           <Button
             onClick={() => handleNavClick("contact")}
