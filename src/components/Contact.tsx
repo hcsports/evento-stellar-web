@@ -70,31 +70,23 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Construct the email body
-      const emailBody = `
-        Nome: ${data.name}
-        E-mail: ${data.email}
-        Telefone: ${data.phone.replace(/\D/g, "")}
-        Mensagem: ${data.message}
-      `;
-      
-      // In a real implementation, you'd use a backend service to send this email
-      // For now, we'll simulate a successful submission
-      console.log("Enviando email para contato@hcsports.com.br");
-      console.log(emailBody);
-      
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success message
+      const response = await fetch("http://localhost:3001/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar o formulário");
+      }
+
       toast({
         title: "Mensagem enviada!",
         description: "Entraremos em contato em breve.",
       });
-      
-      // Reset form
+
       form.reset();
     } catch (error) {
       toast({
@@ -106,6 +98,7 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
