@@ -72,7 +72,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/sendEmail", {
+      const response = await fetch("https://develop.hcsports.com.br/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
