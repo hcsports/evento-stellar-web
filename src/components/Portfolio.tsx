@@ -26,26 +26,26 @@ const portfolioItems = [
     delay: 200
   },
   {
-    title: "Self Run",
-    date: "Recife, 20 de julho de 2025",
-    image: "/lovable-uploads/19b29531-e96a-4a92-85d9-f59b288d09be.png",
-    url: "https://selfrun.com.br",
-    delay: 300
-  }, 
-  {
     title: "Meia Maratona do Sol - Sicredi",
     date: "Natal, 20 e 21 de setembro de 2025",
     image: "/lovable-uploads/5fd35488-7fe9-48d0-b486-ceda5b5422a9.png",
     url: "https://meiadosol.com.br",
-    delay: 400
-  }, 
+    delay: 300
+  },
   {
     title: "Meia Maratona PRF 191",
     date: "Natal, 09 de novembro de 2025",
     image: "/lovable-uploads/7e70653f-379c-4581-bf86-62c3e72f8582.png",
     url: "https://meiamaratonaprf191.com.br",
+    delay: 400
+  },
+  {
+    title: "Self Run",
+    date: "São Luís, 30 de novembro de 2025",
+    image: "/lovable-uploads/19b29531-e96a-4a92-85d9-f59b288d09be.png",
+    url: "https://selfrun.com.br",
     delay: 500
-  }
+  },
 ];
 
 const Portfolio = () => {
