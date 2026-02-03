@@ -92,7 +92,7 @@ const Portfolio = () => {
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className="max-w-full max-h-full object-contain" 
+                    className={`object-contain ${item.delay === 200 ? '' : 'max-w-full max-h-full'}`}
                   />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
