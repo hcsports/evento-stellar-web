@@ -20,7 +20,7 @@ const portfolioItems = [
   }, 
   {
     title: "Self Run",
-    date: "Recife, 15 de maio de 2026",
+    date: "Recife, 10 de julho de 2026",
     image: "/lovable-uploads/19b29531-e96a-4a92-85d9-f59b288d09be.png",
     url: "https://selfrun.com.br",
     delay: 300
