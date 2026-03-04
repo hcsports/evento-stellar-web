@@ -5,17 +5,17 @@ import { Calendar, MapPin } from 'lucide-react';
 
 const portfolioItems = [
   {
-    title: "Corrida da Água - CAERN",
-    date: "Natal, 22 de março de 2026",
-    image: "/lovable-uploads/de6d9dbb-bfc2-4715-a81c-b53ecf22250b.png",
-    url: "https://corridadaagua.com.br",
-    delay: 100
-  }, 
-  {
     title: "Corrida da LIGA",
     date: "Natal, 29 de março de 2026",
     image: "/lovable-uploads/corrida-da-liga-logo.png",
     url: "https://corridadaliga.com.br",
+    delay: 100
+  }, 
+   {
+    title: "Corrida da Água - CAERN",
+    date: "Natal, 21 de abril de 2026",
+    image: "/lovable-uploads/de6d9dbb-bfc2-4715-a81c-b53ecf22250b.png",
+    url: "https://corridadaagua.com.br",
     delay: 200
   }, 
   {
