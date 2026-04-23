@@ -5,46 +5,67 @@ import { Calendar, MapPin } from 'lucide-react';
 
 const portfolioItems = [
   {
-    title: "Corrida da LIGA",
-    date: "Natal, 29 de março de 2026",
-    image: "/lovable-uploads/corrida-da-liga-logo.png",
-    url: "https://corridadaliga.com.br",
+    title: "Selfrun Recife",
+    date: "Recife/PE, 10 de Maio de 2026",
+    image: "/eventos/SR_RECIFE.png",
+    url: "https://selfrun.com.br/",
     delay: 100
-  }, 
-   {
-    title: "Corrida da Água - CAERN",
-    date: "Natal, 21 de abril de 2026",
-    image: "/lovable-uploads/de6d9dbb-bfc2-4715-a81c-b53ecf22250b.png",
-    url: "https://corridadaagua.com.br",
-    delay: 200
-  }, 
+  },
   {
-    title: "Self Run",
-    date: "Recife, 10 de maio de 2026",
-    image: "/lovable-uploads/19b29531-e96a-4a92-85d9-f59b288d09be.png",
-    url: "https://selfrun.com.br",
+    title: "Selfrun Natal",
+    date: "Natal/RN, 31 de Maio de 2026",
+    image: "/eventos/SR_NATAL.png",
+    url: "https://selfrun.com.br/",
+    delay: 200
+  },
+  {
+    title: "Soldados do Fogo",
+    date: "Natal/RN, 5 de julho de 2026",
+    image: "/eventos/CORRIDA_DO_FOGO.png",
+    url: "https://www.corridasoldadosdofogo.com.br/",
     delay: 300
   },
   {
-    title: "Corrida Soldados do Fogo",
-    date: "Natal, 05 de julho de 2026",
-    image: "/lovable-uploads/456f6c6d-1118-45fc-8f66-317a56499ac8.png",
-    url: "https://corridasoldadosdofogo.com.br",
+    title: "Corrida Rede Mais Supermercados",
+    date: "Natal/RN, 2 de Agosto de 2026",
+    image: "/eventos/REDEMAIS.png",
+    url: "https://www.instagram.com/corridabomvizinhoredemais",
     delay: 400
   },
   {
     title: "Meia Maratona do Sol - Sicredi",
-    date: "Natal, 19 e 20 de setembro de 2026",
-    image: "/lovable-uploads/5fd35488-7fe9-48d0-b486-ceda5b5422a9.png",
+    date: "Natal/RN, 19 e 20 de Setembro de 2026",
+    image: "/eventos/MEIA_DO_SOL.png",
     url: "https://meiadosol.com.br",
     delay: 500
   },
   {
-    title: "Meia Maratona PRF 191",
-    date: "Natal, 08 de novembro de 2026",
-    image: "/lovable-uploads/7e70653f-379c-4581-bf86-62c3e72f8582.png",
-    url: "https://meiamaratonaprf191.com.br",
+    title: "Corrida COOPANEST",
+    date: "Natal/RN, 18 de Outubro de 2026",
+    image: "/eventos/COOPANEST_RN.png",
+    url: "https://corridacoopanest.com.br/",
     delay: 600
+  },
+  {
+    title: "Meia Maratona PRF",
+    date: "Natal/RN, 8 de novembro de 2026",
+    image: "/eventos/PRF.png",
+    url: "http://meiamaratonaprf191.com.br/",
+    delay: 700
+  },
+  {
+    title: "Selfrun São Luís",
+    date: "São Luís/MA, 22 de novembro de 2026",
+    image: "/eventos/SR_SLZ.png",
+    url: "https://selfrun.com.br/",
+    delay: 800
+  },
+  {
+    title: "Selfrun Teresina",
+    date: "Teresina/PI, 29 de novembro de 2026",
+    image: "/eventos/SR_TERESINA.png",
+    url: "https://selfrun.com.br/",
+    delay: 900
   },
 ];
 
