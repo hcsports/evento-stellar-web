@@ -29,7 +29,7 @@ const portfolioItems = [
     title: "Corrida Rede Mais Supermercados",
     date: "Natal/RN, 2 de Agosto de 2026",
     image: "/eventos/REDEMAIS.png",
-    url: "https://www.instagram.com/corridabomvizinhoredemais",
+    url: "https://corridadobomvizinho.com.br",
     delay: 400
   },
   {
