@@ -47,25 +47,32 @@ const portfolioItems = [
     delay: 600
   },
   {
+    title: "Corrida do Empreendedor",
+    date: "Natal/RN, 24 de Outubro de 2026",
+    image: "/eventos/CORRIDA_DO_EMPREENDEDOR.png",
+    url: "https://corridadoempreendedorrn.com.br",
+    delay: 700
+  },
+  {
     title: "Meia Maratona PRF",
     date: "Natal/RN, 8 de novembro de 2026",
     image: "/eventos/PRF.png",
     url: "http://meiamaratonaprf191.com.br/",
-    delay: 700
+    delay: 800
   },
   {
     title: "Selfrun São Luís",
     date: "São Luís/MA, 22 de novembro de 2026",
     image: "/eventos/SR_SLZ.png",
     url: "https://selfrun.com.br/",
-    delay: 800
+    delay: 900
   },
   {
     title: "Selfrun Teresina",
     date: "Teresina/PI, 29 de novembro de 2026",
     image: "/eventos/SR_TERESINA.png",
     url: "https://selfrun.com.br/",
-    delay: 900
+    delay: 1000
   },
 ];
 
